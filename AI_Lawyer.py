@@ -46,7 +46,7 @@ def main():
             with open(f"{store_name}.pkl", "rb") as f:
                 VectorStore = pickle.load(f)
         else:
-            embeddings = OpenAIEmbeddings(openai_api_key="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")
+            embeddings = OpenAIEmbeddings(openai_api_key="OPEN_AI_API")
             VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
             with open(f"{store_name}.pkl", "wb") as f:
                 pickle.dump(VectorStore, f)
@@ -55,7 +55,7 @@ def main():
         
         if query:
             docs = VectorStore.similarity_search(query=query, k=3)
-            llm = OpenAI(openai_api_key="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")
+            llm = OpenAI(openai_api_key="OPEN_AI_API")
             chain = load_qa_chain(llm=llm, chain_type="stuff")
             with get_openai_callback() as cb:
                 response = chain.run(input_documents=docs, question=query, max_tokens= 2000)
