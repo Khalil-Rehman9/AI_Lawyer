@@ -1,0 +1,5 @@
+streamlit
+pickle
+PyPDF2
+langchain
+os
