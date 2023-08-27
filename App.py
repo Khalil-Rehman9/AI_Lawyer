@@ -16,12 +16,12 @@ def main():
     jurisdiction = st.sidebar.selectbox("Select Jurisdiction:", ["US Law", "India Law", "UK Law", "PAKISTAN Law"])
 
     if jurisdiction == "US Law":
-        pdf_path = "US.pdf"
+        pdf_path = "Data/US.pdf"
     elif jurisdiction == "India Law":
-        pdf_path = "india.pdf"
+        pdf_path = "Data/india.pdf"
     elif jurisdiction == "UK Law":
-        pdf_path = "UK.pdf"
-    elif jurisdiction == "PAKISTAN Law":
+        pdf_path = "Data/UK.pdf"
+    elif jurisdiction == "Data/PAKISTAN Law":
         pdf_path = "Pakistan.pdf"
     else:
         pdf_path = None
